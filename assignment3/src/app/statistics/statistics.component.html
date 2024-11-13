@@ -1,0 +1,66 @@
+<div class="container mt-4">
+    <h2>Stats</h2>
+
+    <!-- Display error message if there's an error -->
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <!-- Statistics Cards -->
+  <div class="container mt-5">
+    <div class="row text-center">
+      <!-- Total Drivers -->
+      <div class="col-md-4">
+        <div class="info-panel shadow-lg p-4 bg-light rounded">
+          <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+          <h4>Total Drivers</h4>
+          <p class="display-4">{{ statsData?.driverCount ?? 'Loading...' }}</p>
+        </div>
+      </div>
+
+      <!-- Total Packages -->
+      <div class="col-md-4">
+        <div class="info-panel shadow-lg p-4 bg-light rounded">
+          <i class="fas fa-box fa-3x mb-3 text-success"></i>
+          <h4>Total Packages</h4>
+          <p class="display-4">{{ statsData?.packageCount ?? 'Loading...' }}</p>
+        </div>
+      </div>
+
+      <!-- Retrieve Operations -->
+      <div class="col-md-4">
+        <div class="info-panel shadow-lg p-4 bg-light rounded">
+          <i class="fas fa-search fa-3x mb-3 text-info"></i>
+          <h4>Retrieve Operations</h4>
+          <p class="display-4">{{ statsData?.retrieve ?? 'Loading...' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center mt-5">
+      <!-- Create Operations -->
+      <div class="col-md-4">
+        <div class="info-panel shadow-lg p-4 bg-light rounded">
+          <i class="fas fa-plus fa-3x mb-3 text-warning"></i>
+          <h4>Create Operations</h4>
+          <p class="display-4">{{ statsData?.create ?? 'Loading...' }}</p>
+        </div>
+      </div>
+
+      <!-- Update Operations -->
+      <div class="col-md-4">
+        <div class="info-panel shadow-lg p-4 bg-light rounded">
+          <i class="fas fa-edit fa-3x mb-3 text-secondary"></i>
+          <h4>Update Operations</h4>
+          <p class="display-4">{{ statsData?.update ?? 'Loading...' }}</p>
+        </div>
+      </div>
+
+      <!-- Delete Operations -->
+      <div class="col-md-4">
+        <div class="info-panel shadow-lg p-4 bg-light rounded">
+          <i class="fas fa-trash fa-3x mb-3 text-danger"></i>
+          <h4>Delete Operations</h4>
+          <p class="display-4">{{ statsData?.delete ?? 'Loading...' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

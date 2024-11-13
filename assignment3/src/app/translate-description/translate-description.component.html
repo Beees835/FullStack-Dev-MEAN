@@ -1,0 +1,43 @@
+<div class="container mt-4">
+    <h3 class="mb-4">Translate Package Descriptions</h3>
+  
+    <!-- Display error message if any -->
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  
+    <!-- Select language -->
+    <div class="form-group mb-4">
+      <label for="language">Select Language:</label>
+      <select class="form-control" id="language" [(ngModel)]="selectedLanguage">
+        <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.name }}</option>
+      </select>
+    </div>
+  
+    <!-- Package table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Package Title</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let package of packages">
+          <td>{{ package.package_title }}</td>
+          <td>{{ package.package_description }}</td>
+          <td>
+            <button class="btn btn-info" (click)="sendMessage(package.package_description)">
+              Translate
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Display the translation result -->
+    <div *ngIf="translatedDescription">
+      <h5>Translated Description:</h5>
+      <p>{{ translatedDescription }}</p>
+    </div>
+  </div>
+  

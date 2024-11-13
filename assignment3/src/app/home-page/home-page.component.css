@@ -1,0 +1,37 @@
+/* Styling for infographic panels */
+.info-panel {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for the infographic panels */
+.info-panel:hover {
+  transform: translateY(-10px); /* Slight lift effect on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styling for icons */
+.info-panel i {
+  font-size: 3rem;
+  margin-bottom: 10px;       /* Spacing between icon and text */
+}
+
+/* General body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Text alignment for panel headers */
+.info-panel h4 {
+  font-weight: 700;
+  margin-bottom: 20px;        /* Space between header and count */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .info-panel {
+    margin-bottom: 20px;
+  }
+}

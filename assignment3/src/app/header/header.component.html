@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Brand Logo -->
+  <a class="navbar-brand" href="#">
+    <img ngSrc="/icon.jpg" alt="Brand Logo" style="width: 40px; height: 40px;" height="637" width="711">
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Nav Items -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+
+      <li class="nav-item dropdown" ngbDropdown>
+        <!-- Use the event.preventDefault() so that when click it doesnt redirect to homepage first -->
+        <a class="nav-link dropdown-toggle" id="driverDropdown" ngbDropdownToggle href="#" (click)="$event.preventDefault()" role="button" aria-expanded="false">
+          Drivers
+        </a>
+        <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="driverDropdown">
+          <li><a class="dropdown-item" href="/add-driver">Add Driver</a></li>
+          <li><a class="dropdown-item" href="/list-drivers">List Drivers</a></li>
+          <li><a class="dropdown-item" href="/delete-driver">Delete Driver</a></li>
+          <li><a class="dropdown-item" href="/update-driver">Update Driver</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="packageDropdown" ngbDropdownToggle href="#" (click)="$event.preventDefault()" role="button" aria-expanded="false">
+          Packages
+        </a>
+        <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="packageDropdown">
+          <li><a class="dropdown-item" href="/add-package">Add Package</a></li>
+          <li><a class="dropdown-item" href="/list-packages">List Packages</a></li>
+          <li><a class="dropdown-item" href="/delete-package">Delete Package</a></li>
+          <li><a class="dropdown-item" href="/update-package">Update Package</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="userDropdown" ngbDropdownToggle href="#" (click)="$event.preventDefault()" role="button" aria-expanded="false">
+          User Management
+        </a>
+        <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="userDropdown">
+          <li><a class="dropdown-item" href="/login">Login</a></li>
+          <li><a class="dropdown-item" href="/signup">Register</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="serviceDropdown" ngbDropdownToggle href="#" (click)="$event.preventDefault()" role="button" aria-expanded="false">
+          Services
+        </a>
+        <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="serviceDropdown">
+          <li><a class="dropdown-item" href="/translate-description">Translate</a></li>
+          <li><a class="dropdown-item" href="/text-to-speech">Text to speech</a></li>
+          <li><a class="dropdown-item" href="/generative-ai">AI</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/statistics">Statistics</a>
+      </li>
+    </ul>
+  </div>
+</nav>

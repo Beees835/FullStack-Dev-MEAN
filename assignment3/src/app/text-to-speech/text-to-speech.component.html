@@ -1,0 +1,35 @@
+<div class="container mt-4">
+    <h3 class="mb-4">Text-to-Speech for Driver's License</h3>
+  
+    <!-- Display error message if any -->
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  
+    <!-- Text-to-Speech Section -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Driver Name</th>
+          <th>Driver License</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let driver of drivers">
+          <td>{{ driver.driver_name }}</td>
+          <td>{{ driver.driver_licence }}</td>
+          <td>
+            <button class="btn btn-info" (click)="convertTextToSpeech(driver.driver_licence)">
+              Convert to Speech
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+        <h5>Speech:</h5>
+    </div>
+    <audio controls *ngIf="audioUrl">
+        <source [src]="audioUrl" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+</div>

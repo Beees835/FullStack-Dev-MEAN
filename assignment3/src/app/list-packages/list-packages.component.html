@@ -1,0 +1,52 @@
+<div class="container mt-4">
+    <h3 class="mb-4">List of Packages</h3>
+
+    <!-- Display error message if any -->
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+    <!-- Packages table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Package Title</th>
+          <th>Weight (g)</th>
+          <th>Description</th>
+          <th>MongoID</th>
+          <th>ID</th>
+          <th>Destination</th>
+          <th>Driver ID</th>
+          <th>Allocated</th>
+          <th>Action</th> <!-- Add Action column for the button -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Show the driver's details if available -->
+        <tr *ngFor="let package of packages">
+          <td>{{ package.package_title }}</td>
+          <td>{{ package.package_weight | kgToGrams }}</td> <!-- Convert kg to grams -->
+          <td>{{ package.package_description }}</td>
+          <td>{{ package._id }}</td>
+          <td>{{ package.package_id }}</td>
+          <td>{{ package.package_destination }}</td>
+          <td>{{ package.driver_id }}</td> <!-- Assuming driver_id is an ObjectId -->
+          <td>{{ package.isAllocated ? 'Yes' : 'No' }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="fetchDriverDetails(package.driver_id)">
+              View Driver
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="selectedDriver && selectedDriver.driver_id">
+          <td colspan="8">
+            <div *ngIf="driverErrorMessage" class="alert alert-warning">{{ driverErrorMessage }}</div>
+            <div *ngIf="!driverErrorMessage">
+              <h5>Driver Details for {{ selectedDriver.driver_name }}</h5>
+              <p><strong>Department:</strong> {{ selectedDriver.driver_department }}</p>
+              <p><strong>Licence:</strong> {{ selectedDriver.driver_licence }}</p>
+              <p><strong>Is Active:</strong> {{ selectedDriver.driver_isActive ? 'Yes' : 'No' }}</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

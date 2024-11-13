@@ -1,0 +1,113 @@
+.container {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Page titles */
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  table-layout: auto;  /* Allows column width to adjust dynamically */
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;  /* Prevents text from wrapping */
+}
+
+.table th {
+  background-color: #333333;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.table td {
+  color: #555555;
+}
+
+/* Makes sure columns adjust to content */
+.table th,
+.table td {
+  width: auto;  /* Automatically adjust width based on content */
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #ddd;
+}
+
+.table-bordered th {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.table-bordered td {
+  background-color: #f9f9f9;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #000;
+  border: 2px solid #666666;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+  border-color: #999999;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #b02a37;
+}
+
+/* Alerts */
+.alert {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Margins for form inputs */
+.mb-3 {
+  margin-bottom: 1.5rem;
+}

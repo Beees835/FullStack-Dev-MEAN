@@ -1,0 +1,66 @@
+<div class="container mt-4">
+    <h3 class="mb-4">Driver List</h3>
+
+    <!-- Show error message if any -->
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+    <!-- Drivers table -->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>MongoID</th>
+
+                <th>License</th>
+                <th>Department</th>
+                <th>Active</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let driver of drivers">
+                <td>{{ driver.driver_name | uppercasePipe }}</td> <!-- Using the custom pipe -->
+                <td>{{ driver.driver_id }}</td>
+                <td>{{ driver._id }}</td>
+
+                <td>{{ driver.driver_licence }}</td>
+                <td>{{ driver.driver_department }}</td>
+                <td>{{ driver.driver_isActive ? 'Yes' : 'No' }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="fetchDriverPackages(driver._id)">
+                        Show Packages
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- Packages table for the selected driver -->
+    <div *ngIf="selectedDriverPackages && selectedDriverPackages.length > 0">
+        <h4 class="mt-4">Packages for Driver {{ selectedDriverId }}</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Package Title</th>
+                    <th>Weight</th>
+                    <th>Destination</th>
+                    <th>Allocated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let packages of selectedDriverPackages">
+                    <td>{{ packages.package_title }}</td>
+                    <td>{{ packages.package_weight }} kg</td>
+                    <td>{{ packages.package_destination }}</td>
+                    <td>{{ packages.isAllocated ? 'Yes' : 'No' }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-secondary mt-2" (click)="resetPackagesView()">Hide Packages</button>
+    </div>
+
+    <!-- No packages found message -->
+    <div *ngIf="noPackagesMessage" class="alert alert-warning mt-3">{{ noPackagesMessage }}</div>
+</div>

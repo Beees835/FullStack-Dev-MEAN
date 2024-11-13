@@ -1,0 +1,57 @@
+<div class="container mt-4">
+    <h3 class="mb-4">Add New Driver</h3>
+    <form (ngSubmit)="addDriver()">
+      <!-- Driver Name -->
+      <div class="mb-3">
+        <label for="driverName" class="form-label">Driver Name</label>
+        <input
+          type="text"
+          id="driverName"
+          class="form-control"
+          placeholder="Enter driver's name"
+          [(ngModel)]="driver.driver_name"
+          name="driver_name"
+          required
+        />
+      </div>
+  
+      <!-- Driver Licence -->
+      <div class="mb-3">
+        <label for="driverLicence" class="form-label">Driver Licence</label>
+        <input
+          type="text"
+          id="driverLicence"
+          class="form-control"
+          placeholder="Enter driver's licence"
+          [(ngModel)]="driver.driver_licence"
+          name="driver_licence"
+          required
+        />
+      </div>
+  
+      <!-- Driver Department -->
+      <div class="mb-3">
+        <label for="driverDepartment" class="form-label">Department</label>
+        <input
+          type="text"
+          id="driverDepartment"
+          class="form-control"
+          placeholder="Enter driver's department"
+          [(ngModel)]="driver.driver_department"
+          name="driver_department"
+          required
+        />
+      </div>
+  
+      <!-- Driver Active Status -->
+      <div class="mb-3">
+        <label for="driverIsActive" class="form-label">Is Driver Active?</label>
+        <select id="driverIsActive" class="form-control" [(ngModel)]="driver.driver_isActive" name="driver_isActive" required>
+          <option [ngValue]="true">Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Add Driver</button>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <h3 class="mb-4">Update Driver</h3>
+
+  <!-- Show success or error messages -->
+  <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <!-- Form for updating driver -->
+  <form (ngSubmit)="updateDriver()">
+    <div class="mb-3">
+      <label for="driverId" class="form-label">Driver ID (MongoID)</label>
+      <input
+        type="text"
+        id="driverId"
+        class="form-control"
+        [(ngModel)]="_id"
+        name="driverId"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="driverLicence" class="form-label">Driver Licence</label>
+      <input
+        type="text"
+        id="driverLicence"
+        class="form-control"
+        [(ngModel)]="driverLicence"
+        name="driverLicence"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="driverDepartment" class="form-label">Driver Department</label>
+      <input
+        type="text"
+        id="driverDepartment"
+        class="form-control"
+        [(ngModel)]="driverDepartment"
+        name="driverDepartment"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Driver</button>
+  </form>
+</div>

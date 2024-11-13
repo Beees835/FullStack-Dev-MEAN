@@ -1,0 +1,27 @@
+/* Ensure the html and body take up the full height of the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Wrapper to contain the main content and push the footer down */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+.content {
+  flex: 1; /* Main content will take up the remaining space */
+}
+
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 10px 0; /* Adjust padding */
+  margin: 0;
+  flex-shrink: 0; /* Prevent the footer from growing/shrinking */
+}
+
+
+

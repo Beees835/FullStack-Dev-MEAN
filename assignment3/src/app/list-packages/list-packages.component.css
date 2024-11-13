@@ -1,0 +1,69 @@
+.container {
+  width: auto;  /* Allow the container to expand to full width */
+  max-width: 100%;  /* Allow the container to take the full width dynamically */
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  display: block;  /* Ensure container grows with the content */
+}
+
+/* Page title */
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+/* Table styles */
+.table {
+  width: 100%;  /* Ensure the table takes the full width of its container */
+  border-collapse: collapse;
+  table-layout: auto;  /* Ensure the table adjusts dynamically based on content */
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;  /* Prevents text from wrapping */
+  overflow: hidden;      /* Ensures content doesn't overflow */
+  text-overflow: ellipsis; /* Adds ellipsis (...) for truncated text */
+}
+
+.table th {
+  background-color: #333333;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.table td {
+  color: #555555;
+}
+
+/* View driver button */
+.btn-primary {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+}
+
+/* Driver details section should expand with the table */
+.driver-details {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}

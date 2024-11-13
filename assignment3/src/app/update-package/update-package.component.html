@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <h3>Update Package</h3>
+
+    <!-- Display success or error message -->
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+    <!-- Form to update package destination -->
+    <form (ngSubmit)="updatePackage()">
+      <div class="mb-3">
+        <label for="packageId" class="form-label">Package ID (MongoID)</label>
+        <input
+          type="text"
+          id="packageId"
+          class="form-control"
+          [(ngModel)]="package_id"
+          name="package_id"
+          placeholder="Enter package ID"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="destination" class="form-label">New Destination</label>
+        <input
+          type="text"
+          id="destination"
+          class="form-control"
+          [(ngModel)]="package_destination"
+          name="package_destination"
+          placeholder="Enter new destination"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Update Package</button>
+    </form>
+  </div>

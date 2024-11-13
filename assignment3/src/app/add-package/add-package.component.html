@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <h3 class="mb-4">Add New Package</h3>
+
+  <!-- Display success or error messages -->
+  <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <!-- Add Package Form -->
+  <form (ngSubmit)="addPackage()">
+    <div class="mb-3">
+      <label for="packageTitle" class="form-label">Package Title</label>
+      <input type="text" id="packageTitle" class="form-control" placeholder="Enter package title" [(ngModel)]="package.package_title" name="package_title" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="packageWeight" class="form-label">Package Weight</label>
+      <input type="number" step="0.01" id="packageWeight" class="form-control" placeholder="Enter package weight" [(ngModel)]="package.package_weight" name="package_weight" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="packageDescription" class="form-label">Package Description</label>
+      <input type="text" id="packageDescription" class="form-control" placeholder="Enter package description" [(ngModel)]="package.package_description" name="package_description" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="packageDestination" class="form-label">Package Destination</label>
+      <input type="text" id="packageDestination" class="form-control" placeholder="Enter package destination" [(ngModel)]="package.package_destination" name="package_destination" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="driverSelect" class="form-label">Assign Driver</label>
+      <select id="driverSelect" class="form-control" [(ngModel)]="package.driver_id" name="driver_id" required>
+        <option value="" disabled selected>Please select a driver</option>
+        <option *ngFor="let driver of drivers" [value]="driver._id">{{ driver.driver_name }} (ID: {{ driver._id }})</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="isAllocated" class="form-label">Is Allocated</label>
+      <select class="form-control" id="isAllocated" [(ngModel)]="package.isAllocated" name="isAllocated" required>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

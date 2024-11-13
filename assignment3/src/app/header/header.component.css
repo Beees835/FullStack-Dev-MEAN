@@ -1,0 +1,85 @@
+/* Add padding to avoid overlapping the navbar with the top of the page */
+body, .container {
+  padding-top: 70px;
+}
+
+/* Styling the navbar */
+.navbar {
+  padding: 10px 15px; /* Internal padding for better spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a light shadow for depth */
+}
+
+/* Navbar-brand logo */
+.navbar-brand {
+  font-size: 1.5rem;
+  padding-right: 10px; /* Space between logo and nav items */
+  padding-left: 10px; /* Adds padding between logo and edges */
+  margin-right: auto; /* Ensures the logo stays on the left */
+}
+
+/* Navbar items */
+.navbar-nav {
+  display: flex;
+  justify-content: center; /* Center the nav items */
+  width: 100%;
+}
+
+/* Individual nav items */
+.nav-item {
+  padding: 0 20px; /* Spacing between nav items */
+}
+
+/* Ensure the logo stays on the left and nav items are centered */
+.navbar-collapse {
+  display: flex;
+  justify-content: center; /* Center the nav items */
+  align-items: center;
+  width: 100%; /* Ensures full width for better centering */
+}
+
+.navbar-collapse .navbar-nav {
+  flex: 1;
+  justify-content: center; /* Centers nav items */
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+  background-color: #343a40;  /* Matching with navbar color */
+  border: none;  /* Removes the border */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);  /* Adds depth with a subtle shadow */
+  margin-top: 1rem;
+  margin-left: 1.3rem;
+  border-radius: 5px;  /* Rounded corners */
+}
+
+.dropdown-item {
+  color: #fff;  /* White text color for readability */
+  padding: 10px 20px;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #212529;  /* Dark text on hover for contrast */
+  background-color: lightgray;  /* Light background on hover */
+}
+
+/* Hover effects for a professional look */
+.nav-link:hover {
+  color: #f8f9fa; /* Change color on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background effect */
+  border-radius: 5px;
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: column;  /* Stacks nav items vertically on smaller screens */
+  }
+  .nav-item {
+    width: 100%;  /* Full width nav items for easier touch */
+    text-align: center;  /* Center align the text */
+  }
+  .dropdown-menu {
+    position: static;  /* Dropdowns expand inline */
+    width: 100%;
+  }
+}

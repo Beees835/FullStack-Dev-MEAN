@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <h3 class="mb-4">Delete Packages</h3>
+
+    <!-- Display error message if any -->
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+    <!-- Packages table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Package Title</th>
+          <th>Weight (g)</th>
+          <th>Description</th>
+          <th>MongoID</th>
+          <th>ID</th>
+          <th>Destination</th>
+          <th>Driver ID</th>
+          <th>Allocated</th>
+          <th>Action</th> <!-- Action column for delete button -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let package of packages">
+          <td>{{ package.package_title }}</td>
+          <td>{{ package.package_weight | kgToGrams }}</td> <!-- Use the KgToGrams pipe -->
+            <td>{{ package.package_description }}</td>
+          <td>{{ package._id }}</td>
+          <td>{{ package.package_id }}</td>
+          <td>{{ package.package_destination }}</td>
+          <td>{{ package.driver_id }}</td>
+          <td>{{ package.isAllocated ? 'Yes' : 'No' }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deletePackage(package._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
